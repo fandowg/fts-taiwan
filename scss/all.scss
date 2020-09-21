@@ -1,0 +1,200 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "base/normalize";
+@import "base/base-all";
+@import "containers";
+@import "buttons";
+
+.top{
+  margin-bottom:$spacer-bottom;
+  background-image: url(../images/header-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  @include md{
+    background-image: url(../images/header-1-m.jpg);
+    height:26vh;
+    background-size: cover;
+  }
+}
+
+.container-md{
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.content-s{
+  display: flex;
+  align-items: stretch;
+  margin-bottom: $spacer-bottom;
+
+}
+
+.content-b{
+}
+
+//box
+.box-s{
+  background-color: #eee;
+  margin-right: 0.5rem;
+  // padding:$spacer-box-s;
+}
+
+.box-b{
+  background-color: #E8F0FF;
+  padding: $spacer-box-s;
+}
+
+.item-wrapper{
+
+}
+
+.item-b{
+
+}
+
+.item{
+
+}
+
+
+
+//grid
+
+.one{
+ flex:1 1 100%;
+ max-width: 100%;
+
+}
+.one-bigger{
+  flex:0 0 70%;
+  max-width: 70%;
+}
+
+.swiper-container{
+  width: 100%;
+}
+.swiper-button-prev,.swiper-button-next{
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
+}
+ .swiper-button-prev:after,.swiper-button-next:after{
+   content: '';
+   
+ }
+ .swiper-button-prev{
+  background-image: url(../images/swiper_prev.png);
+ }
+ .swiper-button-next{
+  background-image: url(../images/swiper_next.png);   
+ }
+
+ .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  opacity: 0.8;
+}
+
+.swiper-pagination-bullet-active {
+  background: $secondary;
+}
+
+.block-head{
+  background-color:$primary;
+  font-size:  $h2-font-size;
+  color: #fff;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+
+  span{
+    display: block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+  img{
+  }
+
+}
+
+.side-menu{
+  padding: $spacer-bsae;  
+  .qr{
+   
+    // text-align: center;
+    display: block;
+    margin-left: 1.2rem;
+    padding-top: 0.5rem;
+    img{
+      max-width: 100px;
+    }
+  }
+  li{
+    padding-bottom: 0.8rem;
+    &:last-child{
+      padding-bottom: 0;
+    }
+    i{
+      color: $secondary;
+      padding-right: 0.5rem;
+    }
+    a{
+
+    }
+  }
+}
+
+
+//tab切換
+
+.tab-item{
+  display: none;
+  &.show{
+    display: block;
+  }
+}
+//tab樣式
+
+.tab{
+  font-size: $tab-font-size;
+  font-weight: bolder;
+  
+  ul{
+    display: flex;
+   
+    li{
+      background-color: $primary;
+      padding:$spacer $spacer*2 ;
+      font-size: $h5-font-size;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      @include border($gray-400,1px);
+      @include linear-gradient;
+      a{
+        color: #fff;
+        display: block;
+      }
+      &+ li{
+        
+        margin-left: 0.2rem;
+      }
+    }
+  }
+
+}
+
+.tab-item-box{
+  h2{
+    @include text-no;
+  }
+}
+
+

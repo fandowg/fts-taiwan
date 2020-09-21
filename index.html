@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>基本文件</title>
+  <meta property="og:title" content="">
+  <meta property="og:site_name" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta name="image" content="">
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/all.css" />
+  <!-- <link rel="stylesheet" href="css/all.min.css" /> -->
+</head>
+<body>
+  <main>
+    <div class="top">
+    </div>
+    <div class="container-md">
+      <div class="content-s">
+        <div class="one box-s">
+          <h2 class="block-head"><span><img src="images/icon-st6.png" alt=""></span>服務列表</h2>
+          <ul class="side-menu">
+            <li><i class="fas fa-square"></i><a href="" class="btn-link">旅遊行程量身訂做需求單</a></li>
+            <li><i class="fas fa-square"></i><a href="" class="btn-link">良友國內旅遊LINE@
+                <span class="qr">
+                  <img src="images/lineqrcode.png" alt="" class="btn-link"> @131ecthf
+                </span>
+              </a></li>
+            <li><i class="fas fa-square"></i><a href="">飯店住宿輕鬆訂</a></li>
+          </ul>
+        </div>
+        <div class="one-bigger">
+          <!-- <img src="images/banner12.jpg" alt=""> -->
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><a href=""><img src="images/banner09.jpg" alt=""></a></div>
+              <div class="swiper-slide"><a href=""><img src="images/banner10.jpg" alt=""></a></div>
+              <div class="swiper-slide"><a href=""><img src="images/banner11.jpg" alt=""></a></div>
+              <div class="swiper-slide"><a href=""><img src="images/banner12.jpg" alt=""></a></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+      <div class="content-b">
+        <div class="tab-menu tab">
+          <ul>
+            <li><a href="">北北基</a></li>
+            <li><a href="">桃竹苗</a></li>
+            <li><a href="">中彰投</a></li>
+          </ul>
+        </div>
+        <div class="box-b">
+           <div class="tab-item-box tab-item show ">
+            <h2>精選行程<img src="images/st-1.png" alt=""></h2>
+            <div class="item-b">
+            </div>
+            <div class="item-wrapper">
+              <div class="item"></div>
+            </div>
+          </div>
+          <div class="tab-item-box tab-item">
+            2
+          </div>
+          <div class="tab-item-box tab-item">
+            3
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://www.ftstour.com.tw/b2c/taiwan/js/jquery.min.js"></script>
+<script>
+  //輪播圖
+  var Taiwanslider = new Swiper('.swiper-container', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+  //切換menu
+  for (var i = 0; i < $('.tab-menu ul li ').length; i++) {
+    (function(i) {
+      $('.tab-menu ul li ').eq(i).find('a').click(function(e) {
+        e.preventDefault();
+        console.log(this);
+        $('.tab-menu ul li ').removeClass('sel');
+        $(this).parent().addClass('sel');
+        $('.tab-item').hide();
+        $('.tab-item').eq(i).fadeIn(200);
+      })
+    })(i)
+  }
+</script>
+<!-- <script src="js/all.js"></script> -->
+</html>

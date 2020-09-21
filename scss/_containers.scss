@@ -1,0 +1,9 @@
+.box{
+  width: 300px;
+  height: 300px;
+  padding: $spacer-box;
+@include border(#ccc ,1px);
+@include xl{
+  padding: $spacer-box-m;
+}
+}
