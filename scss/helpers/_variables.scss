@@ -48,7 +48,7 @@ $tab-font-size:$h5-font-size;
 //各種間距的大小定義好，包含rwd，這樣以後rwd可以少寫一點
 $spacer: 1rem !default;
 $spacer-bottom:2rem !default;
-$spacer-bsae:$spacer * 0.9375 !default;
+$spacer-wrapper:$spacer * 0.9375 !default;
 $spacer-box:2rem 2rem;
 $spacer-box-s:1rem 1rem;
 $spacer-box-m:1rem 1rem;

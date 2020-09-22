@@ -18,25 +18,38 @@
   }
 }
 
+//大容器用container
 .container-md{
   max-width: $max-width;
   margin: 0 auto;
+ 
+  @include xl{
+    padding:0 $spacer-wrapper; 
+  }
 }
 
+//section用 content
 .content-s{
-  display: flex;
-  align-items: stretch;
+ 
   margin-bottom: $spacer-bottom;
+
+ 
+
 
 }
 
 .content-b{
 }
 
-//box
+//box 單純只有框的樣式
 .box-s{
   background-color: #eee;
   margin-right: 0.5rem;
+  max-width: 880px!important;
+  @include xl{
+    margin-right: 0;
+    margin-bottom: $spacer ;
+  }
   // padding:$spacer-box-s;
 }
 
@@ -45,9 +58,7 @@
   padding: $spacer-box-s;
 }
 
-.item-wrapper{
-
-}
+//item 個別項目用item ，可以客製化
 
 .item-b{
 
@@ -59,20 +70,46 @@
 
 
 
-//grid
+//grid 單純只有grid 不加樣式
+.one-wrapper-xl{
+  display: flex;
+  align-items: stretch;
+  @include xl{
+    flex-wrap:wrap;
+    justify-content: center;
+  } 
+}
+.one-wrapper-md{
+  display: flex;
+  align-items: stretch;
+  @include md{
+    flex-wrap:wrap;
+    justify-content: center;
+  } 
+
+}
 
 .one{
  flex:1 1 100%;
  max-width: 100%;
 
+    
+
+
 }
 .one-bigger{
   flex:0 0 70%;
   max-width: 70%;
+  @include xl{
+    flex:0 0 100%;
+  max-width: 100%;   
+  }
 }
 
+//swiper
 .swiper-container{
   width: 100%;
+  max-width: 880px;
 }
 .swiper-button-prev,.swiper-button-next{
   background-size: 40px 40px;
@@ -126,19 +163,35 @@
 }
 
 .side-menu{
-  padding: $spacer-bsae;  
+  padding: $spacer-wrapper;  
+  
+  @include xl{
+    display: flex;
+  }
+  @include md{
+    display: block;
+  }
   .qr{
    
     // text-align: center;
     display: block;
     margin-left: 1.2rem;
     padding-top: 0.5rem;
+    @include xl{
+      display: none;
+    }
     img{
       max-width: 100px;
     }
   }
   li{
     padding-bottom: 0.8rem;
+    &+li{
+      margin-left: 1rem;
+      @include md{
+       margin-left: 0;
+      }
+    }
     &:last-child{
       padding-bottom: 0;
     }
@@ -172,13 +225,14 @@
    
     li{
       background-color: $primary;
-      padding:$spacer $spacer*2 ;
+      
       font-size: $h5-font-size;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       @include border($gray-400,1px);
       @include linear-gradient;
       a{
+        padding:$spacer $spacer*2 ;
         color: #fff;
         display: block;
       }
