@@ -17,7 +17,7 @@ $active-status:$secondary !default;
 $success: #666 !default;
 $info: #666 !default;
 $warning: #666 !default;
-$danger: #666 !default;
+$danger: #FF0000 !default;
 $light: #666 !default;
 $dark: #666 !default;
 
@@ -36,8 +36,8 @@ $theme-colors: (
 $font-size-base:1rem !default; // Assumes the browser default, typically `16px`
 $h1-font-size:$font-size-base * 2.5 !default;
 $h2-font-size:$font-size-base * 1.5 !default;
-$h3-font-size:$font-size-base * 1.75 !default;
-$h4-font-size:$font-size-base * 1.5 !default;
+$h3-font-size:$font-size-base * 1.25 !default;
+$h4-font-size:$font-size-base * 1.2 !default;
 $h5-font-size:$font-size-base * 1.125 !default;
 $h6-font-size:$font-size-base !default;
 $font-weight-normal:400 !default;
@@ -47,11 +47,14 @@ $tab-font-size:$h5-font-size;
 
 //各種間距的大小定義好，包含rwd，這樣以後rwd可以少寫一點
 $spacer: 1rem !default;
+$spacer-s:$spacer*0.625;
 $spacer-bottom:2rem !default;
 $spacer-wrapper:$spacer * 0.9375 !default;
 $spacer-box:2rem 2rem;
 $spacer-box-s:1rem 1rem;
 $spacer-box-m:1rem 1rem;
+
+$gutter:0.5%;
 
 $grid-breakpoints: ( // xs: 0,
   sm: 576px,

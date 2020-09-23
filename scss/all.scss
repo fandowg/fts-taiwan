@@ -5,129 +5,190 @@
 @import "containers";
 @import "buttons";
 
-.top{
-  margin-bottom:$spacer-bottom;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bolder;
+}
+
+.top {
+  margin-bottom: $spacer-bottom;
   background-image: url(../images/header-1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   height: 400px;
-  @include md{
+
+  @include md {
     background-image: url(../images/header-1-m.jpg);
-    height:26vh;
+    height: 26vh;
     background-size: cover;
   }
 }
 
 //大容器用container
-.container-md{
+.container-md {
   max-width: $max-width;
   margin: 0 auto;
- 
-  @include xl{
-    padding:0 $spacer-wrapper; 
+
+  @include xl {
+    padding: 0 $spacer-wrapper;
   }
 }
 
 //section用 content
-.content-s{
- 
+.content-s {
   margin-bottom: $spacer-bottom;
-
- 
-
-
+  justify-content: center;
 }
 
-.content-b{
-}
-
-//box 單純只有框的樣式
-.box-s{
-  background-color: #eee;
-  margin-right: 0.5rem;
-  max-width: 880px!important;
-  @include xl{
-    margin-right: 0;
-    margin-bottom: $spacer ;
-  }
-  // padding:$spacer-box-s;
-}
-
-.box-b{
-  background-color: #E8F0FF;
-  padding: $spacer-box-s;
-}
-
-//item 個別項目用item ，可以客製化
-
-.item-b{
-
-}
-
-.item{
-
-}
-
+.content-b {}
 
 
 //grid 單純只有grid 不加樣式
-.one-wrapper-xl{
+.one-wrapper {
   display: flex;
   align-items: stretch;
-  @include xl{
-    flex-wrap:wrap;
-    justify-content: center;
-  } 
-}
-.one-wrapper-md{
-  display: flex;
-  align-items: stretch;
-  @include md{
-    flex-wrap:wrap;
-    justify-content: center;
-  } 
+  flex-wrap: wrap;
+  margin-left: -$gutter;
+  margin-right: -$gutter;
 
 }
 
-.one{
- flex:1 1 100%;
- max-width: 100%;
-
-    
-
-
+%one {
+  width: 100%;
+  margin-left: $gutter;
+  margin-right: $gutter;
 }
-.one-bigger{
-  flex:0 0 70%;
-  max-width: 70%;
-  @include xl{
-    flex:0 0 100%;
-  max-width: 100%;   
+
+.one,
+.one-4,
+.one-xl,
+.one-md,
+.one-md-4,
+.one-md-5,
+.one-md-7,
+.one-md-8,
+.one-sm-6 {
+  @extend %one;
+}
+
+//不加容器名代表不變動格數
+.one {
+  flex: 1 1 0;
+  max-width: 100%;
+}
+
+.one-4 {
+  flex: 0 0 percentage(4/12);
+  max-width: percentage(4/12);
+}
+
+
+@include sm-min {
+  .one-sm-6 {
+    flex: 0 0 percentage(6/12)-$gutter*2;;
+    max-width: percentage(6/12)-$gutter*2;;
   }
 }
 
+@include md-min {
+
+  .one-md {
+    flex: 1 1 0;
+    max-width: 100%;
+  }
+
+  .one-md-4 {
+    flex: 0 0  percentage(4/12)-$gutter*2;
+    max-width: percentage(4/12)-$gutter*2;;
+  }
+
+  .one-md-5 {
+    flex: 0 0 percentage(5/12)-$gutter*2;;
+    max-width: percentage(5/12)-$gutter*2;;
+  }
+
+  .one-md-7 {
+    flex: 0 0 percentage(7/12)-$gutter*2;;
+    max-width: percentage(7/12)-$gutter*2;;
+  }
+
+  .one-md-8 {
+    flex: 0 0 percentage(8/12)-$gutter*2;;
+    max-width: percentage(8/12)-$gutter*2;;
+  }
+
+}
+
+
+
+@include xl-min {
+  .one-xl {
+    flex: 1 1 0;
+    max-width: 100%;
+  }
+}
+
+//客製化grid
+.one-md-s {
+  flex: 0 0 30%;
+  max-width: 400px;
+  @extend %one;
+  @include md {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.one-xl-b {
+  flex: 0 0 70%;
+  max-width: 70%;
+  @extend %one;
+  @include xl {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+}
+
+// @include md {
+//   .one-md,.one-md-4,.one-md-8{
+//     flex: 0 0 100%;
+//   max-width: 100%;    
+//   }
+// }
+
+
 //swiper
-.swiper-container{
+.swiper-container {
   width: 100%;
   max-width: 880px;
 }
-.swiper-button-prev,.swiper-button-next{
+
+.swiper-button-prev,
+.swiper-button-next {
   background-size: 40px 40px;
   width: 40px;
   height: 40px;
 }
- .swiper-button-prev:after,.swiper-button-next:after{
-   content: '';
-   
- }
- .swiper-button-prev{
-  background-image: url(../images/swiper_prev.png);
- }
- .swiper-button-next{
-  background-image: url(../images/swiper_next.png);   
- }
 
- .swiper-pagination-bullet {
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: '';
+}
+
+.swiper-button-prev {
+  background-image: url(../images/swiper_prev.png);
+}
+
+.swiper-button-next {
+  background-image: url(../images/swiper_next.png);
+}
+
+.swiper-pagination-bullet {
   width: 10px;
   height: 10px;
   background: #fff;
@@ -138,16 +199,16 @@
   background: $secondary;
 }
 
-.block-head{
-  background-color:$primary;
-  font-size:  $h2-font-size;
+.block-head {
+  background-color: $primary;
+  font-size: $h2-font-size;
   color: #fff;
   padding: 0.5rem;
   display: flex;
   align-items: center;
   margin-bottom: 0;
 
-  span{
+  span {
     display: block;
     width: 36px;
     height: 36px;
@@ -157,98 +218,190 @@
     border-radius: 50%;
     margin-right: 0.5rem;
   }
-  img{
-  }
 
+  img {}
 }
 
-.side-menu{
-  padding: $spacer-wrapper;  
-  
-  @include xl{
+.side-menu {
+  padding: $spacer-wrapper;
+
+  @include xl {
     display: flex;
   }
-  @include md{
+
+  @include md {
     display: block;
   }
-  .qr{
-   
+
+  .qr {
     // text-align: center;
     display: block;
     margin-left: 1.2rem;
     padding-top: 0.5rem;
-    @include xl{
+
+    @include xl {
       display: none;
     }
-    img{
+
+    img {
       max-width: 100px;
     }
   }
-  li{
+
+  li {
     padding-bottom: 0.8rem;
-    &+li{
-      margin-left: 1rem;
-      @include md{
-       margin-left: 0;
+
+    &+li {
+      @include xl {
+        margin-left: 1rem;
+      }
+
+      @include md {
+        margin-left: 0;
       }
     }
-    &:last-child{
+
+    &:last-child {
       padding-bottom: 0;
     }
-    i{
+
+    i {
       color: $secondary;
       padding-right: 0.5rem;
     }
-    a{
 
-    }
+    a {}
   }
 }
 
-
 //tab切換
-
-.tab-item{
+.tab-item {
   display: none;
-  &.show{
+
+  &.show {
     display: block;
   }
 }
-//tab樣式
 
-.tab{
+//tab樣式
+.tab {
   font-size: $tab-font-size;
   font-weight: bolder;
-  
-  ul{
+
+  ul {
     display: flex;
-   
-    li{
+
+    li {
       background-color: $primary;
-      
       font-size: $h5-font-size;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
-      @include border($gray-400,1px);
+      @include border;
       @include linear-gradient;
-      a{
-        padding:$spacer $spacer*2 ;
+
+      a {
+        padding: $spacer $spacer*2;
         color: #fff;
         display: block;
       }
-      &+ li{
-        
+
+      &+li {
         margin-left: 0.2rem;
       }
     }
   }
-
 }
 
-.tab-item-box{
-  h2{
+.tab-item-box {
+  h2 {
     @include text-no;
   }
 }
 
+//box 單純只有框的樣式
+.box-s {
+  background-color: #eee;
+  // margin-right: 0.5rem;
 
+  @include xl {
+    max-width: 880px !important;
+    margin-right: 0;
+    margin-bottom: $spacer;
+  }
+
+}
+
+.box-b {
+  background-color: #E8F0FF;
+  padding: $spacer-box-s;
+
+}
+
+//item 個別項目用item ，可以客製化
+
+.item-wrapper {
+  // margin-left: -0.5rem;
+  // margin-right: -0.5rem;
+
+}
+
+.item-b {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: $spacer-bottom;
+
+  @include md {}
+
+  .one-md {
+    // padding-left: $spacer;
+  }
+
+}
+
+.item-price {
+  margin-bottom: $spacer-s;
+}
+
+.text-danger {
+  color: $danger;
+  font-weight: bolder;
+  font-size: $h5-font-size;
+}
+
+.item-date {
+  margin-bottom: $spacer-s;
+
+  span {
+    color: $secondary;
+    font-weight: bolder;
+  }
+
+}
+
+.item-img {}
+
+.item-img-s {
+  justify-content: flex-start;
+
+  *+* {
+    // margin-left: $spacer-s;
+
+  }
+
+}
+
+.item {
+  text-align: center;
+  // margin-left: 0.5rem;
+  // margin-right: 0.5rem;
+  margin-bottom: $spacer-bottom;
+  @include border;
+  padding: $spacer-box-s;
+  background-color: #fff;
+
+  @include md {
+    // max-width: 430px;
+  }
+
+
+}

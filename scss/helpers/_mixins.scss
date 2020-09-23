@@ -1,6 +1,11 @@
-@mixin border($color,$border-width){
-  border:$color $border-width solid;
+// @mixin border($color,$border-width){
+//   border:$color $border-width solid;
+// }
+@mixin border{
+  border:$gray-400 1px solid;
 }
+
+
 
 @mixin transition(){
   transition: all .35s;
@@ -43,6 +48,27 @@
 }
 @mixin sm {
   @media(max-width:map-get($grid-breakpoints,sm)){
+    @content;
+  }
+}
+
+@mixin xl-min {
+  @media(min-width:map-get($grid-breakpoints,xl)){
+    @content;
+  }
+}
+@mixin lg-min {
+  @media(min-width:map-get($grid-breakpoints,lg)){
+    @content;
+  }
+}
+@mixin md-min {
+  @media(min-width:map-get($grid-breakpoints,md)){
+    @content;
+  }
+}
+@mixin sm-min {
+  @media(min-width:map-get($grid-breakpoints,sm)){
     @content;
   }
 }
