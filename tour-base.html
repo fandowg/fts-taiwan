@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    良友旅行社 - 上帝的部落、司馬庫斯、鎮西堡二日遊 6人成行</title>
+  <meta property="og:title" content="">
+  <meta property="og:site_name" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta name="image" content="">
+  <!-- <link rel="stylesheet" href="https://www.soeasyedu.com.tw/2018/css/bootstrap.min.css"> -->
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/all.css" />
+  <!-- <link rel="stylesheet" href="css/all.min.css" /> -->
+</head>
+
+<body>
+  <main>
+   
+    <div class="container-lg taiwan-tour">
+      <div class="one-wrapper block-s">
+        <div class="one-lg box-s-2">
+          <h2 class="block-head"><span class="icon"><img src="images/icon-st6.png" alt=""></span>服務列表</h2>
+          <ul class="side-menu">
+            <li><i class="fas fa-square"></i><a href="" class="btn-link">旅遊行程量身訂做需求單</a></li>
+            <li><i class="fas fa-square"></i><a href="" class="btn-link">良友國內旅遊LINE@
+                <span class="qr">
+                  <img src="images/lineqrcode.png" alt="" class="btn-link"> @131ecthf
+                </span>
+              </a></li>
+            <li><i class="fas fa-square"></i><a href="" class="btn-link">飯店住宿輕鬆訂</a></li>
+          </ul>
+        </div>
+        <div class="one-lg-l box-m">
+          <h1 class="block-head"><img src="images/FTS_S.jpg" alt="">上帝的部落、司馬庫斯、鎮西堡二日遊 6人成行
+                    
+          </h1>
+          <div class="tour-info">
+            <div class="tour-info__content">
+              <ul>
+                <li><span class="title"></span>旅遊國家：<span class="text-primary content">台灣</span></li>
+                <li>旅遊城市：<span class="text-primary">新竹市</span></li>
+                <li>旅遊天數：<span class="text-primary">2天1夜</span></li>
+                <li>直 售 價：<span class="text-primary">NT$7,000 起</span></li>
+                <li> 
+                  團型代碼：<span class="text-primary"> HSS02</span>
+                 </li>
+              </ul>    
+            </div>
+            <div class="tour-info__share">
+              分享：<a href=""> <img src="images/icon-fb.png" alt=""> </a>
+              <a href=""><img src="images/icon-line.png" alt=""></a>
+              <a href=""><img src="images/icon-link.png" alt=""></a>
+              <a href=""><img src="images/icon-pt.png" alt=""></a>
+            </div>
+          </div>
+
+          
+         
+        </div>
+      </div>
+      <div class="block-l">
+        123
+      </div>
+     
+    </div>
+  </main>
+</body>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://www.ftstour.com.tw/b2c/taiwan/js/jquery.min.js"></script>
+<script>
+  //輪播圖
+  var Taiwanslider = new Swiper('.swiper-container', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+  //切換menu
+  for (var i = 0; i < $('.tab-menu ul li ').length; i++) {
+    (function(i) {
+      $('.tab-menu ul li ').eq(i).find('a').click(function(e) {
+        e.preventDefault();
+        console.log(this);
+        $('.tab-menu ul li ').removeClass('sel');
+        $(this).parent().addClass('sel');
+        $('.tab-item').hide();
+        $('.tab-item').eq(i).fadeIn(200);
+      })
+    })(i)
+  }
+</script>
+<!-- <script src="js/all.js"></script> -->
+
+</html>

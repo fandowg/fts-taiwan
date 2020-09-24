@@ -19,6 +19,7 @@
 .one,
 .one-4,
 .one-xl,
+.one-lg,
 .one-md,
 .one-md-4,
 .one-md-5,
@@ -76,6 +77,14 @@
     max-width: calc(#{percentage(8/12)} - #{$gutter*2});
   }
 
+}
+
+@include lg-min {
+  .one-lg {
+    flex: 1 1 0;
+    max-width: 100%;
+    
+  }
 }
 
 

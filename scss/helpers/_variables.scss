@@ -13,7 +13,7 @@ $black: #000 !default;
 
 $primary: #0099ff !default;
 $secondary: #ff6600 !default;
-$active-status:$secondary !default;
+$active-status:$primary !default;
 $success: #666 !default;
 $info: #666 !default;
 $warning: #666 !default;
@@ -34,6 +34,7 @@ $theme-colors: (
 
 //各種文字的size以及相對關係定義好，以後就在這邊改文字
 $font-size-base:1rem !default; // Assumes the browser default, typically `16px`
+$font-size-s:0.875rem !default;
 $h1-font-size:$font-size-base * 2.5 !default;
 $h2-font-size:$font-size-base * 1.5 !default;
 $h3-font-size:$font-size-base * 1.25 !default;
@@ -63,7 +64,8 @@ $grid-breakpoints: ( // xs: 0,
   xl: 1200px) !default;
 
 //容器的寬
-$max-width:1200px;
+$max-width-xl:1200px;
+$max-width-lg:970px;
 
 //body
 $body-bg: $white !default;
@@ -89,8 +91,8 @@ $link-hover-decoration: underline !default;
 $btn-link-disabled-color: $gray-600 !default;
 
 //按鈕
-
-$btn-font-weight: $font-weight-normal !default;
+$btn-font-size:$h3-font-size;
+$btn-font-weight: bolder !default;
 $btn-border-width:$input-btn-border-width;
 $btn-disabled-opacity: .65 !default;
 $enable-pointer-cursor-for-buttons: true !default;

@@ -1,11 +1,12 @@
 .btn {
   display: inline-block;
-
+  font-size: $btn-font-size;
   font-weight: $btn-font-weight;
   color: $body-color;
   text-align: center;
-  text-decoration: none;
- 
+  padding:0.4rem 2rem;
+  border-radius: 5px;
+  text-decoration: none; 
   vertical-align: middle;
   user-select: none;
   background-color: transparent;
@@ -32,7 +33,7 @@
     cursor: if($enable-pointer-cursor-for-buttons, pointer, null);
     &:active,
     &.active {
-      background-color:#000 ;
+      // background-color:#000 ;
       &:focus {        
       }
     }
@@ -45,6 +46,12 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
+.btn-secondary{
+  &:hover{
+    background-color: $active-status;
+    color: #fff;
+  }
+}
 
 //
 // Alternate buttons
@@ -81,7 +88,7 @@ fieldset:disabled a.btn {
 
   &:focus,
   &.focus {
-    text-decoration: $link-hover-decoration;
+    // text-decoration: $link-hover-decoration;
   }
 
   &:disabled,
