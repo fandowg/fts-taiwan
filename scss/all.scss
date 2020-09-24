@@ -2,6 +2,7 @@
 @import "helpers/mixins";
 @import "base/normalize";
 @import "base/base-all";
+@import "grid";
 @import "containers";
 @import "buttons";
 
@@ -32,9 +33,10 @@ h6 {
 .container-md {
   max-width: $max-width;
   margin: 0 auto;
+  padding: 0 $spacer-wrapper;
 
   @include xl {
-    padding: 0 $spacer-wrapper;
+    // padding: 0 $spacer-wrapper;
   }
 }
 
@@ -47,109 +49,31 @@ h6 {
 .content-b {}
 
 
-//grid 單純只有grid 不加樣式
-.one-wrapper {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  margin-left: -$gutter;
-  margin-right: -$gutter;
 
-}
-
-%one {
-  width: 100%;
-  margin-left: $gutter;
-  margin-right: $gutter;
-}
-
-.one,
-.one-4,
-.one-xl,
-.one-md,
-.one-md-4,
-.one-md-5,
-.one-md-7,
-.one-md-8,
-.one-sm-6 {
-  @extend %one;
-}
-
-//不加容器名代表不變動格數
-.one {
-  flex: 1 1 0;
-  max-width: 100%;
-}
-
-.one-4 {
-  flex: 0 0 percentage(4/12);
-  max-width: percentage(4/12);
-}
-
-
-@include sm-min {
-  .one-sm-6 {
-    flex: 0 0 percentage(6/12)-$gutter*2;;
-    max-width: percentage(6/12)-$gutter*2;;
-  }
-}
-
-@include md-min {
-
-  .one-md {
-    flex: 1 1 0;
-    max-width: 100%;
-  }
-
-  .one-md-4 {
-    flex: 0 0  percentage(4/12)-$gutter*2;
-    max-width: percentage(4/12)-$gutter*2;;
-  }
-
-  .one-md-5 {
-    flex: 0 0 percentage(5/12)-$gutter*2;;
-    max-width: percentage(5/12)-$gutter*2;;
-  }
-
-  .one-md-7 {
-    flex: 0 0 percentage(7/12)-$gutter*2;;
-    max-width: percentage(7/12)-$gutter*2;;
-  }
-
-  .one-md-8 {
-    flex: 0 0 percentage(8/12)-$gutter*2;;
-    max-width: percentage(8/12)-$gutter*2;;
-  }
-
-}
-
-
-
-@include xl-min {
-  .one-xl {
-    flex: 1 1 0;
-    max-width: 100%;
-  }
-}
 
 //客製化grid
 .one-md-s {
+  @extend %one;
+  @include md-min {
   flex: 0 0 30%;
   max-width: 400px;
-  @extend %one;
-  @include md {
-    flex: 0 0 100%;
-    max-width: 100%;
+  
+  
+    // flex:1 1 0;
+    // max-width: 100%;
   }
 }
 
 .one-xl-b {
+  @extend %one;
+  
+  @include xl-min {
   flex: 0 0 70%;
   max-width: 70%;
-  @extend %one;
-  @include xl {
-    flex: 0 0 100%;
-    max-width: 100%;
+  
+ 
+    // flex:1 1 0;
+    // max-width: 100%;
   }
 
 }
@@ -207,6 +131,9 @@ h6 {
   display: flex;
   align-items: center;
   margin-bottom: 0;
+  @include md{
+    font-size: $h3-font-size;
+  }
 
   span {
     display: block;
@@ -287,22 +214,39 @@ h6 {
 .tab {
   font-size: $tab-font-size;
   font-weight: bolder;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none
+}
 
   ul {
     display: flex;
 
     li {
-      background-color: $primary;
+      
       font-size: $h5-font-size;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       @include border;
-      @include linear-gradient;
-
+      // @include linear-gradient;
+      background: $primary;
+      @include md{
+        flex: none;
+        border-radius: 0;
+        font-size: $h6-font-size;              
+      }
+      &.sel{
+        background: $secondary; 
+      }
       a {
         padding: $spacer $spacer*2;
         color: #fff;
         display: block;
+        @include md{
+          padding: $spacer-s
+        }
       }
 
       &+li {
@@ -315,6 +259,9 @@ h6 {
 .tab-item-box {
   h2 {
     @include text-no;
+    @include md{
+      max-width: 180px;
+    }
   }
 }
 
@@ -325,7 +272,7 @@ h6 {
 
   @include xl {
     max-width: 880px !important;
-    margin-right: 0;
+    // margin-right: 0;
     margin-bottom: $spacer;
   }
 
