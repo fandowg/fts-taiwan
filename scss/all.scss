@@ -6,6 +6,12 @@
 @import "containers";
 @import "buttons";
 
+//title 和 content用做子元件用，不可以寫在外面
+//list當作清單的外框
+//item用作單一物件，建議寫在裡面
+//one用做grid
+//head是如果有些區域的表頭可以用
+//每一頁的最外框最好都加一個可以識別的名字，先不寫樣式
 h1,
 h2,
 h3,
@@ -43,31 +49,23 @@ h6 {
 .container-lg {
   @extend .container-xl;
   max-width: $max-width-lg;
-
 }
-
 
 //section用 block
 .block-s {
-  margin-bottom: $spacer-bottom;
+  // margin-bottom: $spacer-bottom;
   justify-content: center;
 }
 
-.block-l {
-
-}
-
-
-
+.block-l {}
 
 //客製化grid
 .one-md-s {
   @extend %one;
+
   @include md-min {
-  flex: 0 0 30%;
-  max-width: 400px;
-  
-  
+    flex: 0 0 30%;
+    max-width: 400px;
     // flex:1 1 0;
     // max-width: 100%;
   }
@@ -75,26 +73,22 @@ h6 {
 
 .one-xl-l {
   @extend %one;
-  
+
   @include xl-min {
-  flex: 0 0 70%;
-  max-width: 70%;
-  
- 
+    flex: 0 0 70%;
+    max-width: 70%;
     // flex:1 1 0;
     // max-width: 100%;
   }
-
 }
 
-.one-lg-l{
+.one-lg-l {
   @extend %one;
+
   @include lg-min {
     flex: 0 0 65%;
     max-width: 65%;
-    
-    }
-
+  }
 }
 
 // @include md {
@@ -103,12 +97,11 @@ h6 {
 //   max-width: 100%;    
 //   }
 // }
-
-
 //swiper
 .swiper-container {
   width: 100%;
   max-width: 880px;
+  margin-bottom: $spacer-bottom;
 }
 
 .swiper-button-prev,
@@ -142,7 +135,7 @@ h6 {
   background: $secondary;
 }
 
-.block-head {
+.head-bg {
   background-color: $primary;
   font-size: $h2-font-size;
   color: #fff;
@@ -150,8 +143,11 @@ h6 {
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  @include md{
+  min-height: 52px;
+  
+  @include md {
     font-size: $h3-font-size;
+    min-height: 42px;
   }
 
   .icon {
@@ -163,16 +159,33 @@ h6 {
     text-align: center;
     border-radius: 50%;
     margin-right: 0.5rem;
+    @include md {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+    }
   }
-  
+  .icon-no-bg{
+    // width: 36px;
+   
+    img {
+      width: 30px;
+      @include lg {
+        min-width: 30px;
+      }
+      
+    }   
+    margin-right: $spacer-s;
+  }
 
-  img {}
+  
 }
 
-.s-word{
+.s-word {
   font-size: $font-size-s;
   font-weight: normal;
 }
+
 .side-menu {
   padding: $spacer;
 
@@ -241,34 +254,38 @@ h6 {
   overflow-x: scroll;
   overflow-y: hidden;
   scrollbar-width: none;
+
   &::-webkit-scrollbar {
     display: none
-}
+  }
 
   ul {
     display: flex;
 
     li {
-      
       font-size: $h5-font-size;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       @include border;
       // @include linear-gradient;
       background: $primary;
-      @include lg{
+
+      @include lg {
         flex: none;
         border-radius: 0;
-        font-size: $h6-font-size;              
+        font-size: $h6-font-size;
       }
-      &.sel{
-        background: $secondary; 
+
+      &.sel {
+        background: $secondary;
       }
+
       a {
         padding: $spacer $spacer*2;
         color: #fff;
         display: block;
-        @include lg{
+
+        @include lg {
           padding: $spacer-s
         }
       }
@@ -283,7 +300,8 @@ h6 {
 .tab-item-box {
   h2 {
     @include text-no;
-    @include md{
+
+    @include md {
       max-width: 180px;
     }
   }
@@ -291,45 +309,40 @@ h6 {
 
 //box 單純只有框的樣式
 .box-s {
-  background-color: #eee;
+  background-color: $gray-100;
+  @include border;
+  margin-bottom: $spacer-bottom;
   // margin-right: 0.5rem;
-
   @include xl {
     max-width: 880px !important;
-    // margin-right: 0;
     margin-bottom: $spacer;
+    
   }
-
 }
 
-.box-s-2 {
-  background-color: #eee;
-  
-
-  @include lg {
-   
-   
-  }
-
+.box-s-tour {
+  background-color: $gray-100;
+  margin-bottom: $spacer-bottom;
+  @include border;
+  @include lg {}
 }
+
 .box-m {
   // padding: $spacer-box-s;
   @include border;
+  margin-bottom: $spacer-bottom;
 }
 
 .box-l {
   background-color: #E8F0FF;
   padding: $spacer-box-s;
   margin-bottom: $spacer-bottom;
-
 }
 
 //item 個別項目用item ，可以客製化
-
 .item-wrapper {
   // margin-left: -0.5rem;
   // margin-right: -0.5rem;
-
 }
 
 .item-l {
@@ -342,47 +355,50 @@ h6 {
   .one-md {
     // padding-left: $spacer;
   }
-
 }
 
-.item{
-  h3{
+.item {
+  h3 {
     min-height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .item-img {
     margin-bottom: $spacer-s;
   }
 }
+
 .item-img {
-  img{
+  img {
     height: 19vw;
     max-height: 240px;
+
     @include sm {
       height: auto;
     }
   }
 }
-.item-img-s{
+
+.item-img-s {
   align-items: flex-end;
-  img{
+
+  img {
     max-height: 160px;
-   
   }
-  
 }
 
-.item-img-main{
-  img{
+.item-img-main {
+  img {
     min-height: 260px;
   }
 
-  @include md{
-    padding-bottom:$spacer-s;
+  @include md {
+    padding-bottom: $spacer-s;
   }
 }
+
 .item-price {
   margin-bottom: $spacer-s;
 }
@@ -400,19 +416,14 @@ h6 {
     color: $secondary;
     font-weight: bolder;
   }
-
 }
-
-
 
 .item-img-s {
   justify-content: flex-start;
 
   *+* {
     // margin-left: $spacer-s;
-
   }
-
 }
 
 .item {
@@ -427,25 +438,92 @@ h6 {
   @include md {
     // max-width: 430px;
   }
-
-
 }
 
-.tour-info{
-  display: flex;
-  justify-content: space-between;
+.list-block-wrapper {
   padding: $spacer;
-  font-size: $h5-font-size;
-  .tour-info__content{
-    li{
-      padding-bottom: 0.5rem;
+  .list-block {
+    margin-bottom: $spacer;
+    padding-bottom: $spacer-s;
+    @include border-bottom;
+    .title{
+      // font-size: $h5-font-size;
+      font-weight: bolder;
+    }
+    .list-block__btn-group{
+      padding-top: $spacer-s;
+      
+      .btn-link{
+        margin-bottom:$spacer-s;
+
+      }
     }
 
   }
-  .share{
+}
+
+.list-one {
+  display: flex;
+
+  // justify-content: space-between;
+  .title {
+    min-width: 90px;
+    text-align: right;
+  }
+
+  .content {}
+}
+
+.tour-info {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacer;
+  // font-size: $h5-font-size;
+  align-items: center;
+  padding: $spacer;
+  @include lg{
+    display: block;
 
   }
+
+  .tour-info__list {
+    // display: flex;
+
+    li {
+      padding-bottom: 0.8rem;
+    }
+  }
+
+  .share {}
 }
-.text-primary{
+
+.travel-info{
+
+}
+.travel-info__list{
+  text-align: center;
+  @include border;
+  .head{
+    padding: $spacer-s 0;
+    background-color:#F0FCFF;
+    @include border-bottom;
+  }
+  .list-row{
+    padding: $spacer-s 0;
+    @include border-bottom;
+    .title{
+      display: none;
+      @include lg{
+        display: block;
+      }      
+
+    }
+    .content{
+
+    }
+  }
+}
+
+.text-primary {
   color: $primary;
 }

@@ -6,6 +6,15 @@
   // justify-content: space-between;
   margin-left: -$gutter;
   margin-right: -$gutter;
+  &.no-gutters{
+    margin-left:0;
+  margin-right:0;
+  &> .one,
+  &> [class*="one-"] {
+    margin-left:0;
+  margin-right:0;
+  }
+  }
 
 }
 
@@ -37,8 +46,8 @@
 }
 
 .one-4 {
-  flex: 0 0 percentage(4/12);
-  max-width: percentage(4/12);
+  flex: 0 0 calc(#{percentage(4/12)} - #{$gutter*2});
+  max-width: calc(#{percentage(4/12)} - #{$gutter*2});
 }
 
 
