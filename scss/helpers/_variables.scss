@@ -16,10 +16,11 @@ $secondary: #ff6600 !default;
 $active-status:$primary !default;
 $success: #666 !default;
 $info: #666 !default;
-$warning: #666 !default;
+$warning: #FF0000 !default;
 $danger: #FF0000 !default;
-$light: #666 !default;
+$light: #aaa !default;
 $dark: #666 !default;
+$light-bg:#F0FCFF;
 
 $theme-colors: (
   "primary": $primary,
@@ -92,6 +93,7 @@ $btn-link-disabled-color: $gray-600 !default;
 
 //按鈕
 $btn-font-size:$h3-font-size;
+$btn-font-size-sm:$font-size-base;
 $btn-font-weight: bolder !default;
 $btn-border-width:$input-btn-border-width;
 $btn-disabled-opacity: .65 !default;

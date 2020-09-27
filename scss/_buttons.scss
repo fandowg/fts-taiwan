@@ -4,7 +4,7 @@
   font-weight: $btn-font-weight;
   color: $body-color;
   text-align: center;
-  padding:0.4rem 2rem;
+  padding:0.6rem 2rem;
   border-radius: 5px;
   text-decoration: none; 
   vertical-align: middle;
@@ -16,7 +16,8 @@
 
   &:hover,
   &.hover {
-
+    color: #fff;
+    opacity: 0.9;
   }
   &:focus,
   &.focus {
@@ -40,6 +41,10 @@
   }
 }
 
+.btn-sm{
+  font-size: $btn-font-size-sm;
+  padding:0.6rem 0.8rem;
+}
 // Future-proof disabling of clicks on `<a>` elements
 a.btn.disabled,
 fieldset:disabled a.btn {
@@ -48,11 +53,72 @@ fieldset:disabled a.btn {
 
 .btn-secondary{
   &:hover{
-    background-color: $active-status;
+    // opacity: 0.9;
+    // background-color: $active-status;
     color: #fff;
   }
 }
+.tour-info__btn-block{
+  display: flex;
+  padding-bottom: $spacer;
+  justify-content: center;
+  @include lg{
+    position: fixed;
+    // width: 100%;
+    bottom: 0;
+    padding-bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .btn{
+    @include lg{
+    border-radius: 0;
+    }
+    // padding:0.4rem 0;
+  }
+  .btn + .btn{
+    margin-left: $spacer-s;
+    @include lg{
+      margin-left: 0;
+    }
+  }
+  @include lg{
+    flex-wrap: wrap;
+    .btn-outline-info{
+      width: 100%;
+      border: 0;
+    }
+    .btn-primary{
+      width: 50%;
+    }
+    .btn-secondary{
+      width: 50%;
+    }
+  }
+}
+.btn-under{
+  font-size: $btn-font-size;
+  padding:0.6rem;
+ width: calc(100% + #{$spacer-s*2});
+ border-radius: 0;
+ margin:0 (-$spacer-s) (-$spacer-s);
+}
+.btn-full{
+  width: 100%;
+  border-radius: 0;
+}
+.btn-outline-info{
+  @include border;
+  cursor: none;
+  pointer-events: none;
 
+  background-color: $gray-100;
+  color: $info;
+  &:hover,
+  &.hover {
+    color: $info;
+  }
+}
 //
 // Alternate buttons
 //

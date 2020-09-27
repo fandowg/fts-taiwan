@@ -35,6 +35,32 @@ h6 {
   }
 }
 
+//文字顏色
+
+.text-primary {
+  color: $primary;
+}
+
+.text-danger {
+  color: $danger;
+  font-weight: bolder;
+  font-size: $h5-font-size;
+}
+
+.text-light {
+  color: $light;
+
+}
+
+.text-warning {
+  color: $warning;
+}
+
+//文字大小
+.text-sm {
+  font-size: $font-size-base;
+}
+
 //大容器用container
 .container-xl {
   max-width: $max-width-xl;
@@ -144,7 +170,12 @@ h6 {
   align-items: center;
   margin-bottom: 0;
   min-height: 52px;
-  
+
+  .left {
+    display: flex;
+    align-items: center;
+  }
+
   @include md {
     font-size: $h3-font-size;
     min-height: 42px;
@@ -159,26 +190,30 @@ h6 {
     text-align: center;
     border-radius: 50%;
     margin-right: 0.5rem;
+
     @include md {
       width: 30px;
       height: 30px;
       line-height: 30px;
     }
   }
-  .icon-no-bg{
+
+  .icon-no-bg {
     // width: 36px;
-   
+
     img {
       width: 30px;
+
       @include lg {
         min-width: 30px;
       }
-      
-    }   
+
+    }
+
     margin-right: $spacer-s;
   }
 
-  
+
 }
 
 .s-word {
@@ -312,11 +347,12 @@ h6 {
   background-color: $gray-100;
   @include border;
   margin-bottom: $spacer-bottom;
+
   // margin-right: 0.5rem;
   @include xl {
     max-width: 880px !important;
     margin-bottom: $spacer;
-    
+
   }
 }
 
@@ -324,6 +360,7 @@ h6 {
   background-color: $gray-100;
   margin-bottom: $spacer-bottom;
   @include border;
+
   @include lg {}
 }
 
@@ -403,11 +440,7 @@ h6 {
   margin-bottom: $spacer-s;
 }
 
-.text-danger {
-  color: $danger;
-  font-weight: bolder;
-  font-size: $h5-font-size;
-}
+
 
 .item-date {
   margin-bottom: $spacer-s;
@@ -442,19 +475,26 @@ h6 {
 
 .list-block-wrapper {
   padding: $spacer;
+
   .list-block {
     margin-bottom: $spacer;
     padding-bottom: $spacer-s;
     @include border-bottom;
-    .title{
+    &:last-child{
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .title {
       // font-size: $h5-font-size;
       font-weight: bolder;
     }
-    .list-block__btn-group{
+
+    .list-block__btn-group {
       padding-top: $spacer-s;
-      
-      .btn-link{
-        margin-bottom:$spacer-s;
+
+      .btn-link {
+        margin-bottom: $spacer-s;
 
       }
     }
@@ -462,17 +502,7 @@ h6 {
   }
 }
 
-.list-one {
-  display: flex;
 
-  // justify-content: space-between;
-  .title {
-    min-width: 90px;
-    text-align: right;
-  }
-
-  .content {}
-}
 
 .tour-info {
   display: flex;
@@ -481,49 +511,147 @@ h6 {
   // font-size: $h5-font-size;
   align-items: center;
   padding: $spacer;
-  @include lg{
+
+  &.for-single {
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .side-block {
+      width: 50%;
+      @include lg{
+        width: 100%;
+      }
+    }
+  }
+
+  @include lg {
     display: block;
 
   }
 
-  .tour-info__list {
-    // display: flex;
+  
 
-    li {
-      padding-bottom: 0.8rem;
+  .tour-info__share {
+    padding: $spacer-s 0;
+  }
+}
+
+.tour-info__list {
+
+  // display: flex;
+  .list-item {
+    display: flex;
+    margin-bottom: $spacer-s;
+
+    // justify-content: space-between;
+    .title {
+      min-width: 90px;
+      // text-align: right;
+    }
+
+    .content {}
+  }
+
+
+}
+
+.travel-info {}
+
+.travel-info__list {
+  text-align: center;
+  @include border;
+  border-bottom: 0;
+
+  @include lg {
+    border: 0;
+    padding-top: $spacer-s;
+  }
+
+  .head {
+    padding: $spacer-s 0;
+    background-color: $light-bg;
+    @include border-bottom;
+
+    @include lg {
+      display: none;
     }
   }
 
-  .share {}
-}
-
-.travel-info{
-
-}
-.travel-info__list{
-  text-align: center;
-  @include border;
-  .head{
-    padding: $spacer-s 0;
-    background-color:#F0FCFF;
-    @include border-bottom;
-  }
-  .list-row{
+  .list-row {
     padding: $spacer-s 0;
     @include border-bottom;
-    .title{
+    align-items: center;
+
+    @include lg {
+      padding: $spacer-s;
+      @include border;
+      margin-bottom: $spacer-s;
+
+    }
+
+    .column {
+      @include lg {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $spacer-s;
+        //  @include border-bottom;
+      }
+    }
+
+    .title {
       display: none;
-      @include lg{
-        display: block;
-      }      
 
+      @include lg {
+        display: block;
+      }
+
+    }
+
+    .content {
+      @include lg {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.space-bw {
+  justify-content: space-between;
+
+  .left {}
+
+  .right {}
+}
+.price-info{
+  .price-info__item{
+    display: flex;        
+    + .price-info__item{
+      margin-top: $spacer-s;
+    }
+    .title{
+      display: block;
+      min-width: 80px;
     }
     .content{
 
     }
+
   }
 }
+// .price-info{
+//   padding:0 $spacer $spacer;
+//   // display: flex;
+//   .price-info__block{
+//     display: flex;
+//     justify-content: center;
+//   }
+//   .price-head{
 
-.text-primary {
-  color: $primary;
-}
+//   }
+//   .price-item{
+
+//   }
+//   .price-info{
+
+//   }
+// }

@@ -29,18 +29,18 @@ a {
     // opacity: 1;
   }
 }
-.for-mobile{
-  display: none;
-  @include md{
-    display: block;
+.for-mobile-lg{
+  display: none !important;
+  @include lg{
+    display: block !important;
   }
 
 }
 
-.for-desk{
+.for-desk-lg{
 
-  @include md{
-    display: none;
+  @include lg{
+    display: none !important;
   }
   
 }

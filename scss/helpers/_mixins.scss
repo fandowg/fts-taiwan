@@ -99,7 +99,7 @@
     cursor: if($enable-pointer-cursor-for-buttons, pointer, null);
     &:active,
     &.active {
-      background-color:#000 ;
+      // background-color:#000 ;
       &:focus {        
       }
     }
