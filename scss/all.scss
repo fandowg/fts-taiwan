@@ -21,6 +21,28 @@ h6 {
   font-weight: bolder;
 }
 
+//導覽
+.nav-bar-container{
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-left: $spacer-wrapper;
+  padding-right:  $spacer-wrapper;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-bar{
+  background-color:$primary;
+  padding: $spacer-s 0;
+ 
+  a{
+    color:#fff;
+  }
+
+}
+.nav-bar__list{
+  display: flex;
+}
+
 .top {
   margin-bottom: $spacer-bottom;
   background-image: url(../images/header-1.jpg);
@@ -75,6 +97,7 @@ h6 {
 .container-lg {
   @extend .container-xl;
   max-width: $max-width-lg;
+  margin-bottom: 4rem;
 }
 
 //section用 block
@@ -511,7 +534,7 @@ h6 {
   // font-size: $h5-font-size;
   align-items: center;
   padding: $spacer;
-
+  
   &.for-single {
     justify-content: flex-start;
     align-items: flex-start;
@@ -555,7 +578,9 @@ h6 {
 
 }
 
-.travel-info {}
+.travel-info {
+  margin-bottom:$spacer-bottom;
+}
 
 .travel-info__list {
   text-align: center;
@@ -636,6 +661,94 @@ h6 {
 
     }
 
+  }
+}
+
+.itinerary{
+  line-height: 1.5;
+
+}
+.itinerary__block{
+  p{
+    margin: $spacer 0;
+    
+  }
+  .content{
+    padding: $spacer;
+    @include lg{
+      padding:$spacer 0;
+    }
+    .top-info{
+
+    }
+    .top-info__img{
+
+    }
+    .top-info__content{
+      padding: $spacer;
+      @include lg{
+        padding:$spacer 0 0;
+      }
+      h3{
+        font-size:  $h1-font-size;
+      }
+
+    }
+    .detail{
+
+    }
+    .bottom-info{
+      
+      .bottom-info__item{
+        background-color: $gray-100;
+      padding: $spacer;
+      margin-bottom: $spacer-s;
+      display: flex;
+      align-items: center;
+      @include lg{
+        flex-wrap: wrap;
+      }
+        .bottom-info__item__head{
+          flex-basis: 133px;
+          flex-shrink: 0;
+          @include lg{
+            max-width: 100px;
+          }
+        }
+        .bottom-info__item__content{
+          @include lg{
+            width: 100%;
+          }
+
+        }
+      }
+
+    }
+
+  }
+  .features{
+    padding: $spacer 80px $spacer;
+    @include lg{
+      padding: $spacer 0;
+    }
+
+  }
+  .other{
+    // margin-bottom: $spacer;
+    i{
+      color: $primary;
+      padding-right: 0.5rem;
+    }
+    .other__block{
+      margin-bottom: $spacer;
+    }
+    .btn-link{
+      display: block;
+      & + .btn-link{
+        margin-top: $spacer-s;
+      }
+      
+    }
   }
 }
 // .price-info{

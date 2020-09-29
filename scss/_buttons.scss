@@ -1,3 +1,7 @@
+//按鈕必須先把狀態做足
+//hover focus active disabled
+//按鈕有一般的  外框的  一班和外框必須要有每一種狀態顏色 link的  link只有一種顏色ok
+
 .btn {
   display: inline-block;
   font-size: $btn-font-size;
@@ -11,8 +15,10 @@
   user-select: none;
   background-color: transparent;
   border: $btn-border-width solid transparent;
- 
   @include transition;
+  @include md{
+    font-size: $font-size-base !important;
+  }
 
   &:hover,
   &.hover {
