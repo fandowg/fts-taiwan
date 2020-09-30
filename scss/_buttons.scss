@@ -160,8 +160,13 @@ fieldset:disabled a.btn {
 
   &:focus,
   &.focus {
+    outline: 0;
     // text-decoration: $link-hover-decoration;
   }
+  &:active,
+    &.active {
+      outline: 0;
+    }
 
   &:disabled,
   &.disabled {
