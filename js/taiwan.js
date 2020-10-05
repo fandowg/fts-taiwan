@@ -12,28 +12,29 @@
     })(i)
   }
 
-$(".toggler").click(function() {
-  console.log(123);
-  $(".nav-bar__list").toggleClass("open");
-  $("body").toggleClass("open");
-});
+  //header手機選單
+  $(".toggler").click(function() {
+    console.log(123);
+    $(".nav-bar__list").toggleClass("open");
+    $("body").toggleClass("open");
+  });
 
-$(".close").click(function() {
-  $(".nav-bar__list").removeClass("open");
-  $("body").removeClass("open");
-});
-$(".dropdown-btn").click(function(e) {
-e.preventDefault();
-})
+  $(".close").click(function() {
+    $(".nav-bar__list").removeClass("open");
+    $("body").removeClass("open");
+  });
+  $(".dropdown-btn").click(function(e) {
+    e.preventDefault();
+  })
 
-//切換分類
-for (var i = 0; i < $('.dropdown-btn-mobile ').length; i++) {
-  (function(i) {
-    $('.dropdown-btn-mobile  ').eq(i).click(function(e) {
-      e.preventDefault();    
-  
-      $('.dropdown-mobile').not($('.dropdown-mobile').eq(i)).removeClass('show');
-      $('.dropdown-mobile').eq(i).toggleClass('show');
-    })
-  })(i)
-}
+  //切換分類
+  for (var i = 0; i < $('.dropdown-btn-mobile ').length; i++) {
+    (function(i) {
+      $('.dropdown-btn-mobile  ').eq(i).click(function(e) {
+        e.preventDefault();
+
+        $('.dropdown-mobile').not($('.dropdown-mobile').eq(i)).removeClass('show');
+        $('.dropdown-mobile').eq(i).toggleClass('show');
+      })
+    })(i)
+  }

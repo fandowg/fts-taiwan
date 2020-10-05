@@ -11,6 +11,7 @@ html {
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Sections
@@ -569,19 +570,6 @@ p {
   }
 }
 
-.box {
-  width: 300px;
-  height: 300px;
-  padding: 2rem 2rem;
-  border: #ced4da 1px solid;
-}
-
-@media (max-width: 1200px) {
-  .box {
-    padding: 1rem 1rem;
-  }
-}
-
 .btn {
   display: inline-block;
   font-size: 1.25rem;
@@ -654,6 +642,7 @@ fieldset:disabled a.btn {
     position: fixed;
     bottom: 0;
     padding-bottom: 0;
+    background-color: #fff;
     left: 0;
     right: 0;
   }
@@ -686,9 +675,11 @@ fieldset:disabled a.btn {
   }
   .tour-info__btn-block .btn-primary {
     width: 50%;
+    padding: 0.8rem 0;
   }
   .tour-info__btn-block .btn-secondary {
     width: 50%;
+    padding: 0.8rem 0;
   }
 }
 

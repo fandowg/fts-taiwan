@@ -1,6 +1,4 @@
-//按鈕必須先把狀態做足
-//hover focus active disabled
-//按鈕有一般的  外框的  一班和外框必須要有每一種狀態顏色 link的  link只有一種顏色ok
+
 
 .btn {
   display: inline-block;
@@ -28,19 +26,19 @@
   &:focus,
   &.focus {
     outline: 0;
-    // box-shadow: $btn-focus-box-shadow;
+  
   }
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
     opacity:$btn-disabled-opacity ;
-    // @include box-shadow(none);
+  
   }
   &:not(:disabled):not(.disabled) {
     cursor: if($enable-pointer-cursor-for-buttons, pointer, null);
     &:active,
     &.active {
-      // background-color:#000 ;
+    
       &:focus {        
       }
     }
@@ -59,8 +57,7 @@ fieldset:disabled a.btn {
 
 .btn-secondary{
   &:hover{
-    // opacity: 0.9;
-    // background-color: $active-status;
+  
     color: #fff;
   }
 }
@@ -73,6 +70,7 @@ fieldset:disabled a.btn {
     // width: 100%;
     bottom: 0;
     padding-bottom: 0;
+    background-color: #fff;
     left: 0;
     right: 0;
   }
@@ -96,9 +94,11 @@ fieldset:disabled a.btn {
     }
     .btn-primary{
       width: 50%;
+      padding: 0.8rem 0;
     }
     .btn-secondary{
       width: 50%;
+      padding: 0.8rem 0;
     }
   }
 }
@@ -135,11 +135,7 @@ fieldset:disabled a.btn {
   }
 }
 
-// @each $color, $value in $theme-colors {
-//   .btn-outline-#{$color} {
-//     @include button-outline-variant($value);
-//   }
-// }
+
 
 
 //

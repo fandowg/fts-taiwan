@@ -1,4 +1,4 @@
-//網頁中各種狀態的顏色定義好
+
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -33,7 +33,7 @@ $theme-colors: (
   "dark": $dark,
 );
 
-//各種文字的size以及相對關係定義好，以後就在這邊改文字
+
 $font-size-base:1rem !default; // Assumes the browser default, typically `16px`
 $font-size-s:0.875rem !default;
 $h1-font-size:$font-size-base * 2 !default;
@@ -47,7 +47,7 @@ $p-font-size:$font-size-base;
 
 $tab-font-size:$h5-font-size;
 
-//各種間距的大小定義好，包含rwd，這樣以後rwd可以少寫一點
+
 $spacer: 1rem !default;
 $spacer-s:$spacer*0.625;
 $spacer-bottom:2rem !default;
